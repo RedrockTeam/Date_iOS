@@ -1,5 +1,5 @@
 //
-//  IndexViewControllerTableViewController.h
+//  MyTableViewCell.h
 //  date_iOS
 //
 //  Created by BooleanMac on 15/5/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface MyTableViewCell : UITableViewCell
 
 @end
