@@ -16,7 +16,6 @@
 		930AD4381AFA0408002298E8 /* date_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4371AFA0408002298E8 /* date_iOSTests.m */; };
 		930AD4461AFAE81D002298E8 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4451AFAE81D002298E8 /* NavigationController.m */; };
 		93A8E1951B0337EF00DBCBF7 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */; };
-		93A8E1981B0341B900DBCBF7 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A8E1971B0341B900DBCBF7 /* MyTableViewCell.m */; };
 		93E98F1F1AFB9A1600D664EA /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93E98F1E1AFB9A1600D664EA /* iconfont.ttf */; };
 		93E98F201AFB9A6D00D664EA /* iconfont.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F1E1AFB9A1600D664EA /* iconfont.ttf */; };
 		93E98F251AFCA93D00D664EA /* RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F241AFCA93D00D664EA /* RequestTool.m */; };
@@ -55,8 +54,6 @@
 		930AD4451AFAE81D002298E8 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		93A8E1931B0337EF00DBCBF7 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
-		93A8E1961B0341B900DBCBF7 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
-		93A8E1971B0341B900DBCBF7 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		93E98F1E1AFB9A1600D664EA /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		93E98F231AFCA93D00D664EA /* RequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTool.h; sourceTree = "<group>"; };
 		93E98F241AFCA93D00D664EA /* RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTool.m; sourceTree = "<group>"; };
@@ -185,8 +182,6 @@
 		93E98F221AFCA8FF00D664EA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				93A8E1961B0341B900DBCBF7 /* MyTableViewCell.h */,
-				93A8E1971B0341B900DBCBF7 /* MyTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -344,7 +339,6 @@
 				930AD41B1AFA0408002298E8 /* main.m in Sources */,
 				93E98F251AFCA93D00D664EA /* RequestTool.m in Sources */,
 				93E98F281AFCB9DB00D664EA /* PersonalModel.m in Sources */,
-				93A8E1981B0341B900DBCBF7 /* MyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
