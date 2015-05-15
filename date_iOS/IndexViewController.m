@@ -111,9 +111,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
-    
+
     NSDictionary *dict = self.data[indexPath.row];
     __weak UIImageView *avatar = (UIImageView *)[tableView viewWithTag:1];
     UILabel *nickname = (UILabel *)[tableView viewWithTag:2];
@@ -124,6 +122,7 @@
     UILabel *date = (UILabel *)[tableView viewWithTag:7];
     UILabel *price = (UILabel *)[tableView viewWithTag:8];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
     if(cell == nil){
         
         cell = [[UITableViewCell alloc]init];
@@ -132,7 +131,7 @@
         
     }
     
-    //如果没有加载过这个图片, 就去加载, 并Hash一下, image存入内存中
+    //对于未加载过的图片进行缓存, 并存入imageDict中以避免重用Cell时带来不必要的网络请求.
     if (![self.imageDict valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]]){
         
         NSURL *avatarURL = [NSURL URLWithString:[dict objectForKey:@"avatarURL"]];
@@ -149,20 +148,22 @@
                                    NSLog(@"Failed to load pic.");
                                }];
     }else{
+        //加载过的图片直接从imageDict中调用即可
         avatar.image = [self.imageDict valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
     }
     
-    //set the UIImageView like a circle.
+    //让图片变圆
     avatar.layer.masksToBounds  = YES;
     avatar.layer.cornerRadius = avatar.frame.size.height / 2;
     
-    //get the Gender-icon
+    //根据性别获取图标
     if ([dict objectForKey:@"gender"] == [NSNumber numberWithInt:0]) {
         [gender setImage:[UIImage imageNamed:@"iconfont-boy"]];
     }else{
         [gender setImage:[UIImage imageNamed:@"iconfont-girl"]];
     }
     
+    //设置各种文本...
     nickname.text = [dict objectForKey:@"nickname"];
     subtitle.text = [dict objectForKey:@"subtitle"];
     content.text = [dict objectForKey:@"content"];
