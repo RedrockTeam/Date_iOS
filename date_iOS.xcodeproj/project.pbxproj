@@ -15,6 +15,7 @@
 		930AD42C1AFA0408002298E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 930AD42A1AFA0408002298E8 /* LaunchScreen.xib */; };
 		930AD4381AFA0408002298E8 /* date_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4371AFA0408002298E8 /* date_iOSTests.m */; };
 		930AD4461AFAE81D002298E8 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4451AFAE81D002298E8 /* NavigationController.m */; };
+		932BE1671B08FF4E00C15536 /* IndexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */; };
 		93A8E1951B0337EF00DBCBF7 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */; };
 		93A8E19E1B043B6100DBCBF7 /* iconfont-boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E19C1B043B6100DBCBF7 /* iconfont-boy.png */; };
 		93A8E19F1B043B6100DBCBF7 /* iconfont-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E19D1B043B6100DBCBF7 /* iconfont-girl.png */; };
@@ -57,6 +58,8 @@
 		930AD4371AFA0408002298E8 /* date_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = date_iOSTests.m; sourceTree = "<group>"; };
 		930AD4441AFAE81D002298E8 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		930AD4451AFAE81D002298E8 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		932BE1651B08FF4E00C15536 /* IndexTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexTableViewCell.h; sourceTree = "<group>"; };
+		932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexTableViewCell.m; sourceTree = "<group>"; };
 		93A8E1931B0337EF00DBCBF7 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		93A8E19C1B043B6100DBCBF7 /* iconfont-boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-boy.png"; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 		93E98F221AFCA8FF00D664EA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				932BE1651B08FF4E00C15536 /* IndexTableViewCell.h */,
+				932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932BE1671B08FF4E00C15536 /* IndexTableViewCell.m in Sources */,
 				93E98F201AFB9A6D00D664EA /* iconfont.ttf in Sources */,
 				930AD41E1AFA0408002298E8 /* AppDelegate.m in Sources */,
 				93E98F2B1AFCEBAA00D664EA /* MessageModel.m in Sources */,

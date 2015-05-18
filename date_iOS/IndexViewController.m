@@ -10,88 +10,79 @@
 
 @interface IndexViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (strong, nonatomic) NSMutableArray *data;
-@property (strong, nonatomic) NSMutableDictionary *imageDict;
+@property (strong, nonatomic) NSArray *data;
 @end
 
 @implementation IndexViewController
 
 -(void)viewWillAppear:(BOOL)animated{
-    _data = [NSMutableArray arrayWithArray:
-            @[
-              @{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-              ,@{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-              ,@{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-              ,@{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-              ,@{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-              ,@{
-                  @"nickname":@"Boolean93",
-                  @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                  @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                  @"gender":[NSNumber numberWithInt:1],
-                  @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                  @"address":@"老校门",
-                  @"date":@"今天晚上",
-                  @"price":@"10元",
-                  }
-             ]];
-    
-    NSLog(@"%ld", _data.count);
-    _imageDict = [[NSMutableDictionary alloc]init];
+    _data =
+             @[
+               @{
+                   @"nickname":@"第一个",
+                   @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:1],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"1元",
+                   }
+               ,@{
+                   @"nickname":@"第二个",
+                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316730398843.jpg",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:1],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"2元",
+                   }
+               ,@{
+                   @"nickname":@"第三个",
+                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316032766928.jpg",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:1],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"3元",
+                   }
+               ,@{
+                   @"nickname":@"第四个",
+                   @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:1],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"4元",
+                   }
+               ,@{
+                   @"nickname":@"第五个",
+                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316730398843.jpg",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:1],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"5元",
+                   }
+               ,@{
+                   @"nickname":@"第六个",
+                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316032766928.jpg",
+                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
+                   @"gender":[NSNumber numberWithInt:0],
+                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
+                   @"address":@"老校门",
+                   @"date":@"今天晚上",
+                   @"price":@"6元",
+                   }
+               ];
 }
 
--(void)loadView{
-    [super loadView];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableview.dataSource = self;
-    _tableview.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,71 +100,43 @@
     return [self.data count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    NSDictionary *dict = self.data[indexPath.row];
-    __weak UIImageView *avatar = (UIImageView *)[tableView viewWithTag:1];
-    UILabel *nickname = (UILabel *)[tableView viewWithTag:2];
-    UIImageView *gender = (UIImageView *)[tableView viewWithTag:3];
-    UILabel *subtitle = (UILabel *)[tableView viewWithTag:4];
-    UITextView *content = (UITextView *)[tableView viewWithTag:5];
-    UILabel *address = (UILabel *)[tableView viewWithTag:6];
-    UILabel *date = (UILabel *)[tableView viewWithTag:7];
-    UILabel *price = (UILabel *)[tableView viewWithTag:8];
+    static NSString *identifier = @"IdentifierViewCell";
+    NSDictionary *dict = [self.data  objectAtIndex: indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
-    if(cell == nil){
-        
-        cell = [[UITableViewCell alloc]init];
-        [cell setValue:@"mycell" forKey:@"reuseidentifier"];
-        NSLog(@"alloc init");
-        
-    }
+    IndexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    //对于未加载过的图片进行缓存, 并存入imageDict中以避免重用Cell时带来不必要的网络请求.
-    if (![self.imageDict valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]]){
-        
-        NSURL *avatarURL = [NSURL URLWithString:[dict objectForKey:@"avatarURL"]];
-        [avatar setImageWithURLRequest:[[NSURLRequest alloc]initWithURL:avatarURL]
+    NSURL *avatarURL = [NSURL URLWithString:[dict objectForKey:@"avatarURL"]];
+        [cell.avatar setImageWithURLRequest:[[NSURLRequest alloc]initWithURL:avatarURL]
                       placeholderImage:[UIImage imageNamed:@"未标题-2"]
                                success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                   avatar.image = image;
-                                   self.imageDict[ [NSString stringWithFormat:@"%ld", indexPath.row] ] = image;
-//                                   [self.imageDict setValue:@"Haha" forKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
-
-                                   NSLog(@"Succeed!");
+                                   cell.avatar.image = image;
                                }
                                failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                   NSLog(@"Failed to load pic.");
+                                   NSLog(@"Failed to load pic. And the Error Message is :\n %@", error);
                                }];
-    }else{
-        //加载过的图片直接从imageDict中调用即可
-        avatar.image = [self.imageDict valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
-    }
     
     //让图片变圆
-    avatar.layer.masksToBounds  = YES;
-    avatar.layer.cornerRadius = avatar.frame.size.height / 2;
+    cell.avatar.layer.masksToBounds  = YES;
+    cell.avatar.layer.cornerRadius = cell.avatar.frame.size.height / 2;
     
     //根据性别获取图标
     if ([dict objectForKey:@"gender"] == [NSNumber numberWithInt:0]) {
-        [gender setImage:[UIImage imageNamed:@"iconfont-boy"]];
+        [cell.gender setImage:[UIImage imageNamed:@"iconfont-boy"]];
     }else{
-        [gender setImage:[UIImage imageNamed:@"iconfont-girl"]];
+        [cell.gender setImage:[UIImage imageNamed:@"iconfont-girl"]];
     }
     
     //设置各种文本...
-    nickname.text = [dict objectForKey:@"nickname"];
-    subtitle.text = [dict objectForKey:@"subtitle"];
-    content.text = [dict objectForKey:@"content"];
-    address.text = [dict objectForKey:@"address"];
-    date.text = [dict objectForKey:@"date"];
-    price.text = [dict objectForKey:@"price"];
-    
+    cell.nickname.text = [dict objectForKey:@"nickname"];
+    cell.subtitle.text = [dict objectForKey:@"subtitle"];
+    cell.content.text = [dict objectForKey:@"content"];
+    cell.address.text = [dict objectForKey:@"address"];
+    cell.date.text = [dict objectForKey:@"date"];
+    cell.price.text = [dict objectForKey:@"price"];
+
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.

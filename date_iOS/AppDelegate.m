@@ -18,11 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[PersonalModel new]fetchUserInfoFromUid:[NSNumber numberWithInt:1 ] toUid:[NSNumber numberWithInt:1] withSuccess:^(id data) {
-        NSLog(@"%@", data);
-    } andFailure:^(id error) {
-        NSLog(@"%@", error);
-    }];
     return YES;
 }
 

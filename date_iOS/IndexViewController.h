@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
+#import "IndexTableViewCell.h"
 
 @interface IndexViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
