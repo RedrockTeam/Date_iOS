@@ -10,7 +10,8 @@
 #import "UIImageView+AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 #import "IndexTableViewCell.h"
+#import "Util.h"
 
-@interface IndexViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface IndexViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end

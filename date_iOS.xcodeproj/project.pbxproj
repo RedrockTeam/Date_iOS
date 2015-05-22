@@ -27,6 +27,8 @@
 		93E98F251AFCA93D00D664EA /* RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F241AFCA93D00D664EA /* RequestTool.m */; };
 		93E98F281AFCB9DB00D664EA /* PersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F271AFCB9DB00D664EA /* PersonalModel.m */; };
 		93E98F2B1AFCEBAA00D664EA /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F2A1AFCEBAA00D664EA /* MessageModel.m */; };
+		93EE359B1B0B73ED00DFE9D5 /* DateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EE359A1B0B73ED00DFE9D5 /* DateDetailViewController.m */; };
+		93EE359E1B0C2B4900DFE9D5 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EE359D1B0C2B4900DFE9D5 /* Util.m */; };
 		96F1342DDE62231F56BF751C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1D13515A36B593379A3492 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,10 @@
 		93E98F271AFCB9DB00D664EA /* PersonalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalModel.m; sourceTree = "<group>"; };
 		93E98F291AFCEBAA00D664EA /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		93E98F2A1AFCEBAA00D664EA /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		93EE35991B0B73ED00DFE9D5 /* DateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateDetailViewController.h; sourceTree = "<group>"; };
+		93EE359A1B0B73ED00DFE9D5 /* DateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateDetailViewController.m; sourceTree = "<group>"; };
+		93EE359C1B0C2B4900DFE9D5 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		93EE359D1B0C2B4900DFE9D5 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,8 @@
 		930AD4171AFA0408002298E8 /* date_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				93EE359C1B0C2B4900DFE9D5 /* Util.h */,
+				93EE359D1B0C2B4900DFE9D5 /* Util.m */,
 				93E98F221AFCA8FF00D664EA /* View */,
 				93E98F211AFCA8F600D664EA /* Data */,
 				930AD4411AFA0C40002298E8 /* Contoller */,
@@ -180,6 +188,8 @@
 				930AD4451AFAE81D002298E8 /* NavigationController.m */,
 				93A8E1931B0337EF00DBCBF7 /* IndexViewController.h */,
 				93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */,
+				93EE35991B0B73ED00DFE9D5 /* DateDetailViewController.h */,
+				93EE359A1B0B73ED00DFE9D5 /* DateDetailViewController.m */,
 			);
 			name = Contoller;
 			sourceTree = "<group>";
@@ -378,7 +388,9 @@
 				930AD4461AFAE81D002298E8 /* NavigationController.m in Sources */,
 				930AD41B1AFA0408002298E8 /* main.m in Sources */,
 				93E98F251AFCA93D00D664EA /* RequestTool.m in Sources */,
+				93EE359B1B0B73ED00DFE9D5 /* DateDetailViewController.m in Sources */,
 				93E98F281AFCB9DB00D664EA /* PersonalModel.m in Sources */,
+				93EE359E1B0C2B4900DFE9D5 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

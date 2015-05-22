@@ -7,121 +7,164 @@
 //
 
 #import "IndexViewController.h"
+#import "DateDetailViewController.h"
+#import "AFNetworking.h"
 
 @interface IndexViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *banners;
+@property (strong, nonatomic) Util *util;
 @end
 
 @implementation IndexViewController
 
+-(id)dateListResponseFilterWithData:(id)data{
+    data = [data valueForKey:@"data"];
+    return data;
+}
+
+/**
+ *  获取约会列表
+ *
+ *  @param uid   用户id
+ *  @param token token
+ */
+-(void)getDateListWithUid:(NSNumber *)uid token:(NSString *)token{
+    NSString *url = @"http://106.184.7.12:8002/index.php/api/date/datelist";
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"uid": uid,
+                                 @"token": token,
+                                 @"date_type": @0,
+                                 @"page": @1,
+                                 @"size": @10,
+                                 @"order": @1
+                                 };
+    [manager POST:url
+       parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              responseObject = [self dateListResponseFilterWithData:responseObject];
+              self.data = responseObject;
+              [self.tableview reloadData];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"Error: %@", error);
+          }];
+}
+
+-(void)loadBanners:(NSArray *)banners{
+    
+    if(banners == nil){
+        banners = self.banners;
+    }
+    
+    int i = 0;
+    for (NSString *banner in banners) {
+        
+        i++;
+    }
+    
+}
+
+-(void)getBanners{
+    NSString *url = @"http://106.184.7.12:8002/index.php/api/public/banner";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             if([[responseObject objectForKey:@"status"] isEqual: @"200"]){
+                 responseObject = [responseObject objectForKey:@"data"];
+                 self.banners = responseObject;
+                 [self loadBanners:responseObject];
+             }else{
+                 NSLog(@"Get Banners Error:%@ =======> %@",
+                       [responseObject objectForKey:@"status"],
+                       [responseObject objectForKey:@"info"]);
+             }
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Get Banners Error: %@", error);
+         }];
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
-    _data =
-             @[
-               @{
-                   @"nickname":@"第一个",
-                   @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:1],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"1元",
-                   }
-               ,@{
-                   @"nickname":@"第二个",
-                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316730398843.jpg",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:1],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"2元",
-                   }
-               ,@{
-                   @"nickname":@"第三个",
-                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316032766928.jpg",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:1],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"3元",
-                   }
-               ,@{
-                   @"nickname":@"第四个",
-                   @"avatarURL":@"http://202.202.43.41/market/public/img/home/select.png",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:1],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"4元",
-                   }
-               ,@{
-                   @"nickname":@"第五个",
-                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316730398843.jpg",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:1],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"5元",
-                   }
-               ,@{
-                   @"nickname":@"第六个",
-                   @"avatarURL":@"http://202.202.43.41/market/app/storage/img/goods/cj/14316032766928.jpg",
-                   @"subtitle":@"啊哈哈哈哈哈哈啊哈哈哈哈哈",
-                   @"gender":[NSNumber numberWithInt:0],
-                   @"content":@"约不约约不约约不约约不约约不约约不约约不约约不约约不约我们去约把!!!好好久没有约过了好桑心的!!!呜呜呜呜呜呜呜喵喵喵喵喵",
-                   @"address":@"老校门",
-                   @"date":@"今天晚上",
-                   @"price":@"6元",
-                   }
-               ];
+    [self getDateListWithUid: [NSNumber numberWithInt:1] token:@"nasdfnldssdaf"];
+    [self getBanners];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"View Did Load At: %@", self);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Memory Warning At: %@", self);
 }
 
 #pragma mark - Table view data source
 
+/**
+ *  section数
+ *
+ *  @param tableView
+ *
+ *  @return NSInteger 数量
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+/**
+ *  一个section的row数
+ *
+ *  @param tableView
+ *  @param section
+ *
+ *  @return NSInteger 数量
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.data count];
+    return [self.data count] + 1;
 }
 
+/**
+ *  获取单个Cell
+ *
+ *  @param tableView
+ *  @param indexPath
+ *
+ *  @return 取好信息的cell
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"IdentifierViewCell";
-    NSDictionary *dict = [self.data  objectAtIndex: indexPath.row];
+    if (indexPath.row == 0) {
+        IndexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
+        return cell;
+    }
+    
+    NSDictionary *dict = [self.data objectAtIndex: (indexPath.row - 1)];
     
     IndexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    NSURL *avatarURL = [NSURL URLWithString:[dict objectForKey:@"avatarURL"]];
-        [cell.avatar setImageWithURLRequest:[[NSURLRequest alloc]initWithURL:avatarURL]
-                      placeholderImage:[UIImage imageNamed:@"未标题-2"]
-                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                   cell.avatar.image = image;
-                               }
-                               failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                   NSLog(@"Failed to load pic. And the Error Message is :\n %@", error);
-                               }];
+    NSURL *avatarURL = [NSURL URLWithString:[dict objectForKey:@"head"]];
+    [cell.avatar setImageWithURLRequest:[[NSURLRequest alloc]initWithURL:avatarURL]
+                       placeholderImage:[UIImage imageNamed:@"未标题-2"]
+                                success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                    cell.avatar.image = image;
+                                }
+                                failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                    NSLog(@"Failed to load pic. And the Error Message is :\n %@", error);
+                                }];
     
     //让图片变圆
     cell.avatar.layer.masksToBounds  = YES;
     cell.avatar.layer.cornerRadius = cell.avatar.frame.size.height / 2;
+
     
     //根据性别获取图标
-    if ([dict objectForKey:@"gender"] == [NSNumber numberWithInt:0]) {
+    if ([dict objectForKey:@"gender"] == [NSNumber numberWithInt:1]) {
         [cell.gender setImage:[UIImage imageNamed:@"iconfont-boy"]];
     }else{
         [cell.gender setImage:[UIImage imageNamed:@"iconfont-girl"]];
@@ -129,11 +172,14 @@
     
     //设置各种文本...
     cell.nickname.text = [dict objectForKey:@"nickname"];
-    cell.subtitle.text = [dict objectForKey:@"subtitle"];
-    cell.content.text = [dict objectForKey:@"content"];
-    cell.address.text = [dict objectForKey:@"address"];
-    cell.date.text = [dict objectForKey:@"date"];
-    cell.price.text = [dict objectForKey:@"price"];
+    cell.subtitle.text = [dict objectForKey:@"title"];
+    cell.content.text = [dict objectForKey:@"signature"];
+    cell.address.text = [dict objectForKey:@"place"];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[dict objectForKey:@"date_at"] doubleValue]];
+    
+    cell.date.text = [date description];
+    cell.price.text = [Util priceNameForKey:[dict objectForKey:@"cost_model"]];
 
     return cell;
 }
@@ -172,14 +218,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    IndexTableViewCell *cell = (IndexTableViewCell *)sender;
+    DateDetailViewController *detailController = (DateDetailViewController *)segue.destinationViewController;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
+#pragma mark - UIScrollView Delegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    scrollView.contentOffset.x / scrollView.superclass.f
+}
 
 @end
