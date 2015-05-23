@@ -62,8 +62,6 @@
 }
 
 -(void)getBanners{
-    self.pageControl.numberOfPages = 1;
-    
     NSString *url = @"http://106.184.7.12:8002/index.php/api/public/banner";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url

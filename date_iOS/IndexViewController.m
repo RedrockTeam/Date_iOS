@@ -111,7 +111,10 @@
     if (indexPath.row == 0) {
         HeaderViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
         self.myHeaderView = cell;
-        [cell getBanners];
+        static dispatch_once_t x;
+        dispatch_once(&x, ^{
+            [cell getBanners];
+        });
         return cell;
     }
     
@@ -204,9 +207,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(scrollView.tag == 213){
-//        NSLog(@"%@", scrollView);
         int pos = scrollView.contentOffset.x / scrollView.frame.size.width;
-        
         UIPageControl *pageControl = self.myHeaderView.pageControl;
         pageControl.currentPage = pos;
     }
