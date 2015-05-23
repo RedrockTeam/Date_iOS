@@ -9,9 +9,12 @@
 #import "IndexViewController.h"
 #import "DateDetailViewController.h"
 #import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
+#import "HeaderViewCell.h"
 
 @interface IndexViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) HeaderViewCell *myHeaderView;
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSArray *banners;
 @property (strong, nonatomic) Util *util;
@@ -25,7 +28,8 @@
 }
 
 /**
- *  获取约会列表
+ *
+ 获取约会列表
  *
  *  @param uid   用户id
  *  @param token token
@@ -46,6 +50,7 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               responseObject = [self dateListResponseFilterWithData:responseObject];
               self.data = responseObject;
+//              NSLog(@"%@", responseObject);
               [self.tableview reloadData];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -53,45 +58,9 @@
           }];
 }
 
--(void)loadBanners:(NSArray *)banners{
-    
-    if(banners == nil){
-        banners = self.banners;
-    }
-    
-    int i = 0;
-    for (NSString *banner in banners) {
-        
-        i++;
-    }
-    
-}
-
--(void)getBanners{
-    NSString *url = @"http://106.184.7.12:8002/index.php/api/public/banner";
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             if([[responseObject objectForKey:@"status"] isEqual: @"200"]){
-                 responseObject = [responseObject objectForKey:@"data"];
-                 self.banners = responseObject;
-                 [self loadBanners:responseObject];
-             }else{
-                 NSLog(@"Get Banners Error:%@ =======> %@",
-                       [responseObject objectForKey:@"status"],
-                       [responseObject objectForKey:@"info"]);
-             }
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Get Banners Error: %@", error);
-         }];
-    
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [self getDateListWithUid: [NSNumber numberWithInt:1] token:@"nasdfnldssdaf"];
-    [self getBanners];
 }
 
 - (void)viewDidLoad {
@@ -140,7 +109,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"IdentifierViewCell";
     if (indexPath.row == 0) {
-        IndexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
+        HeaderViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
+        self.myHeaderView = cell;
+        [cell getBanners];
         return cell;
     }
     
@@ -172,8 +143,8 @@
     
     //设置各种文本...
     cell.nickname.text = [dict objectForKey:@"nickname"];
-    cell.subtitle.text = [dict objectForKey:@"title"];
-    cell.content.text = [dict objectForKey:@"signature"];
+    cell.subtitle.text = [dict objectForKey:@"signature"];
+    cell.content.text = [dict objectForKey:@"title"];
     cell.address.text = [dict objectForKey:@"place"];
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[dict objectForKey:@"date_at"] doubleValue]];
@@ -232,7 +203,14 @@
 #pragma mark - UIScrollView Delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    scrollView.contentOffset.x / scrollView.superclass.f
+    if(scrollView.tag == 213){
+//        NSLog(@"%@", scrollView);
+        int pos = scrollView.contentOffset.x / scrollView.frame.size.width;
+        
+        UIPageControl *pageControl = self.myHeaderView.pageControl;
+        pageControl.currentPage = pos;
+    }
+    
 }
 
 @end

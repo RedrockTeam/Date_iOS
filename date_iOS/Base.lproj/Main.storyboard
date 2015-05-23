@@ -43,26 +43,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="HeaderCell" rowHeight="276" id="dq2-BC-4r2" customClass="IndexTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="HeaderCell" rowHeight="276" id="dq2-BC-4r2" customClass="HeaderViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dq2-BC-4r2" id="JJw-w0-21E">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvO-EA-wlG">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="213" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="bvO-EA-wlG">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="225"/>
-                                                    <subviews>
-                                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CVN-T8-qWb">
-                                                            <rect key="frame" x="281" y="180" width="39" height="37"/>
-                                                        </pageControl>
-                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="gY8-Co-Jyy"/>
                                                     </constraints>
                                                     <connections>
-                                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="F6r-9G-9cy"/>
+                                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="cQ5-h7-SMB"/>
                                                     </connections>
                                                 </scrollView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CVN-T8-qWb">
+                                                    <rect key="frame" x="280" y="188" width="39" height="37"/>
+                                                </pageControl>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnN-UG-qev">
                                                     <rect key="frame" x="208" y="233" width="184" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -92,17 +91,24 @@
                                                 <constraint firstItem="tnN-UG-qev" firstAttribute="height" secondItem="SVL-DW-4WT" secondAttribute="height" id="9fn-Lu-5sW"/>
                                                 <constraint firstItem="tnN-UG-qev" firstAttribute="leading" secondItem="SVL-DW-4WT" secondAttribute="trailing" constant="8" id="AzC-YM-Tn8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bvO-EA-wlG" secondAttribute="trailing" constant="-8" id="Hge-O9-hjY"/>
+                                                <constraint firstItem="bvO-EA-wlG" firstAttribute="leading" secondItem="CVN-T8-qWb" secondAttribute="trailing" constant="-319" id="IT3-qX-bHQ"/>
+                                                <constraint firstItem="bvO-EA-wlG" firstAttribute="bottom" secondItem="CVN-T8-qWb" secondAttribute="bottom" id="OsL-45-6y1"/>
                                                 <constraint firstItem="tnN-UG-qev" firstAttribute="width" secondItem="SVL-DW-4WT" secondAttribute="width" id="PyS-dc-bY0"/>
                                                 <constraint firstItem="O6V-Sv-siB" firstAttribute="width" secondItem="tnN-UG-qev" secondAttribute="width" id="R48-GM-bhc"/>
                                                 <constraint firstItem="bvO-EA-wlG" firstAttribute="leading" secondItem="JJw-w0-21E" secondAttribute="leadingMargin" constant="-8" id="UJR-QW-f0c"/>
                                                 <constraint firstItem="bvO-EA-wlG" firstAttribute="top" secondItem="JJw-w0-21E" secondAttribute="topMargin" constant="-8" id="YEi-71-xTP"/>
                                                 <constraint firstItem="tnN-UG-qev" firstAttribute="height" secondItem="O6V-Sv-siB" secondAttribute="height" id="aQx-9L-2wi"/>
                                                 <constraint firstItem="SVL-DW-4WT" firstAttribute="leading" secondItem="JJw-w0-21E" secondAttribute="leadingMargin" constant="-8" id="g2P-uo-hiu"/>
+                                                <constraint firstItem="bvO-EA-wlG" firstAttribute="centerX" secondItem="CVN-T8-qWb" secondAttribute="centerX" constant="0.5" id="tTk-7w-V5Q"/>
                                                 <constraint firstItem="O6V-Sv-siB" firstAttribute="leading" secondItem="tnN-UG-qev" secondAttribute="trailing" constant="8" id="w06-6N-8tv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="O6V-Sv-siB" secondAttribute="trailing" constant="-8" id="y81-Qn-qze"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="pageControl" destination="CVN-T8-qWb" id="wSC-lY-WUo"/>
+                                            <outlet property="scroll" destination="bvO-EA-wlG" id="RBG-0Z-E9c"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="IdentifierViewCell" rowHeight="276" id="Enl-Mj-Jum" customClass="IndexTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>

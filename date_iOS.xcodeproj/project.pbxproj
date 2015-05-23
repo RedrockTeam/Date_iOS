@@ -16,6 +16,8 @@
 		930AD4381AFA0408002298E8 /* date_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4371AFA0408002298E8 /* date_iOSTests.m */; };
 		930AD4461AFAE81D002298E8 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AD4451AFAE81D002298E8 /* NavigationController.m */; };
 		932BE1671B08FF4E00C15536 /* IndexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */; };
+		938384291B0F4DEA001555F2 /* HeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 938384281B0F4DEA001555F2 /* HeaderViewCell.m */; };
+		9383842F1B0F66E8001555F2 /* UIPageControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9383842E1B0F66E8001555F2 /* UIPageControlController.m */; };
 		93A8E1951B0337EF00DBCBF7 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */; };
 		93A8E19E1B043B6100DBCBF7 /* iconfont-boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E19C1B043B6100DBCBF7 /* iconfont-boy.png */; };
 		93A8E19F1B043B6100DBCBF7 /* iconfont-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E19D1B043B6100DBCBF7 /* iconfont-girl.png */; };
@@ -62,6 +64,10 @@
 		930AD4451AFAE81D002298E8 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		932BE1651B08FF4E00C15536 /* IndexTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexTableViewCell.h; sourceTree = "<group>"; };
 		932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexTableViewCell.m; sourceTree = "<group>"; };
+		938384271B0F4DEA001555F2 /* HeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderViewCell.h; sourceTree = "<group>"; };
+		938384281B0F4DEA001555F2 /* HeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderViewCell.m; sourceTree = "<group>"; };
+		9383842D1B0F66E8001555F2 /* UIPageControlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPageControlController.h; sourceTree = "<group>"; };
+		9383842E1B0F66E8001555F2 /* UIPageControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPageControlController.m; sourceTree = "<group>"; };
 		93A8E1931B0337EF00DBCBF7 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		93A8E19C1B043B6100DBCBF7 /* iconfont-boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-boy.png"; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 				93A8E1941B0337EF00DBCBF7 /* IndexViewController.m */,
 				93EE35991B0B73ED00DFE9D5 /* DateDetailViewController.h */,
 				93EE359A1B0B73ED00DFE9D5 /* DateDetailViewController.m */,
+				9383842D1B0F66E8001555F2 /* UIPageControlController.h */,
+				9383842E1B0F66E8001555F2 /* UIPageControlController.m */,
 			);
 			name = Contoller;
 			sourceTree = "<group>";
@@ -212,6 +220,8 @@
 			children = (
 				932BE1651B08FF4E00C15536 /* IndexTableViewCell.h */,
 				932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */,
+				938384271B0F4DEA001555F2 /* HeaderViewCell.h */,
+				938384281B0F4DEA001555F2 /* HeaderViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -380,10 +390,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				932BE1671B08FF4E00C15536 /* IndexTableViewCell.m in Sources */,
+				938384291B0F4DEA001555F2 /* HeaderViewCell.m in Sources */,
 				93E98F201AFB9A6D00D664EA /* iconfont.ttf in Sources */,
 				930AD41E1AFA0408002298E8 /* AppDelegate.m in Sources */,
 				93E98F2B1AFCEBAA00D664EA /* MessageModel.m in Sources */,
 				930AD4211AFA0408002298E8 /* date_iOS.xcdatamodeld in Sources */,
+				9383842F1B0F66E8001555F2 /* UIPageControlController.m in Sources */,
 				93A8E1951B0337EF00DBCBF7 /* IndexViewController.m in Sources */,
 				930AD4461AFAE81D002298E8 /* NavigationController.m in Sources */,
 				930AD41B1AFA0408002298E8 /* main.m in Sources */,
