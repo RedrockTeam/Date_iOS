@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PersonalModel.h"
+#import "Classy.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+#if TARGET_IPHONE_SIMULATOR
+    // get absolute file path of stylesheet, using relative path
+    NSString *absoluteFilePath = CASAbsoluteFilePath(@"Stylesheet/stylesheet.cas");
+    [CASStyler defaultStyler].watchFilePath = absoluteFilePath;
+#endif
     return YES;
 }
 

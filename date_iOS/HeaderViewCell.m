@@ -7,6 +7,7 @@
 //
 
 #import "HeaderViewCell.h"
+#import "MyImageView.h"
 #import "UIImageView+AFNetworking.h"
 #import "AFNetworking.h"
 
@@ -23,12 +24,17 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 //    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 
+-(void)imageViewOnClick:(UIGestureRecognizer *)obj{
+    MyImageView *img = (MyImageView *)obj.view;
+    NSLog(@"%@", img.targetURL);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:img.targetURL]];
+}
+
 #pragma mark Banners
+
 
 -(void)loadBanners:(NSArray *)banners{
     
@@ -44,11 +50,20 @@
     
     for (NSString *banner in banners) {
         NSString *url = [banner valueForKey:@"src"];
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(i * width, 0, width, height)];
+        NSString *link = [banner valueForKey:@"url"];
+        MyImageView *imageView = (MyImageView *)[[MyImageView alloc]initWithFrame:CGRectMake(i * width, 0, width, height)];
+        imageView.userInteractionEnabled = YES;
+        imageView.targetURL = link;
+        [imageView addGestureRecognizer:
+            [[UITapGestureRecognizer alloc]
+             initWithTarget:self
+             action:@selector(imageViewOnClick:)]
+         ];
+        __weak UIImageView *weakImage = imageView;
         [imageView setImageWithURLRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString: url]]
                          placeholderImage:[UIImage imageNamed:@"未标题-2"]
                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                      imageView.image = image;
+                                      weakImage.image = image;
                                       NSLog(@"Load Image Succeed!");
                                   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                       NSLog(@"Load Image Error: %@", error);

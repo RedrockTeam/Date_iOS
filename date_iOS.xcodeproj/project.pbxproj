@@ -24,6 +24,8 @@
 		93A8E1A91B044BA100DBCBF7 /* iconfont-jikediancanicon28.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E1A61B044BA100DBCBF7 /* iconfont-jikediancanicon28.png */; };
 		93A8E1AA1B044BA100DBCBF7 /* iconfont-qian.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E1A71B044BA100DBCBF7 /* iconfont-qian.png */; };
 		93A8E1AB1B044BA100DBCBF7 /* iconfont-shijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8E1A81B044BA100DBCBF7 /* iconfont-shijian.png */; };
+		93BA72E21B1315E800206E9B /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA72E11B1315E800206E9B /* MyImageView.m */; };
+		93CE5B601B1CC8AF005B45C5 /* stylesheet.cas in Resources */ = {isa = PBXBuildFile; fileRef = 93CE5B5F1B1CC8AF005B45C5 /* stylesheet.cas */; };
 		93E98F1F1AFB9A1600D664EA /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93E98F1E1AFB9A1600D664EA /* iconfont.ttf */; };
 		93E98F201AFB9A6D00D664EA /* iconfont.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F1E1AFB9A1600D664EA /* iconfont.ttf */; };
 		93E98F251AFCA93D00D664EA /* RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98F241AFCA93D00D664EA /* RequestTool.m */; };
@@ -48,6 +50,7 @@
 		050CF3568B5E84723F3D7010 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2B1D13515A36B593379A3492 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		385866C3557CB0B9F6A2FD30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9305DA311B119619007ABE7B /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		930AD4151AFA0408002298E8 /* date_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = date_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		930AD4191AFA0408002298E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930AD41A1AFA0408002298E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,6 +78,9 @@
 		93A8E1A61B044BA100DBCBF7 /* iconfont-jikediancanicon28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-jikediancanicon28.png"; sourceTree = "<group>"; };
 		93A8E1A71B044BA100DBCBF7 /* iconfont-qian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-qian.png"; sourceTree = "<group>"; };
 		93A8E1A81B044BA100DBCBF7 /* iconfont-shijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-shijian.png"; sourceTree = "<group>"; };
+		93BA72E01B1315E800206E9B /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
+		93BA72E11B1315E800206E9B /* MyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageView.m; sourceTree = "<group>"; };
+		93CE5B5F1B1CC8AF005B45C5 /* stylesheet.cas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stylesheet.cas; sourceTree = "<group>"; };
 		93E98F1E1AFB9A1600D664EA /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		93E98F231AFCA93D00D664EA /* RequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTool.h; sourceTree = "<group>"; };
 		93E98F241AFCA93D00D664EA /* RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTool.m; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		930AD4171AFA0408002298E8 /* date_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				93AE987C1B1D8DC500A1DF02 /* Stylesheet */,
 				93EE359C1B0C2B4900DFE9D5 /* Util.h */,
 				93EE359D1B0C2B4900DFE9D5 /* Util.m */,
 				93E98F221AFCA8FF00D664EA /* View */,
@@ -202,6 +209,14 @@
 			name = Contoller;
 			sourceTree = "<group>";
 		};
+		93AE987C1B1D8DC500A1DF02 /* Stylesheet */ = {
+			isa = PBXGroup;
+			children = (
+				93CE5B5F1B1CC8AF005B45C5 /* stylesheet.cas */,
+			);
+			name = Stylesheet;
+			sourceTree = "<group>";
+		};
 		93E98F211AFCA8F600D664EA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +237,8 @@
 				932BE1661B08FF4E00C15536 /* IndexTableViewCell.m */,
 				938384271B0F4DEA001555F2 /* HeaderViewCell.h */,
 				938384281B0F4DEA001555F2 /* HeaderViewCell.m */,
+				93BA72E01B1315E800206E9B /* MyImageView.h */,
+				93BA72E11B1315E800206E9B /* MyImageView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -229,6 +246,7 @@
 		BC8E888B60BA9A96A9B6A392 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9305DA311B119619007ABE7B /* Reveal.framework */,
 				2B1D13515A36B593379A3492 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -318,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A8E1AB1B044BA100DBCBF7 /* iconfont-shijian.png in Resources */,
+				93CE5B601B1CC8AF005B45C5 /* stylesheet.cas in Resources */,
 				93A8E1A91B044BA100DBCBF7 /* iconfont-jikediancanicon28.png in Resources */,
 				93E98F1F1AFB9A1600D664EA /* iconfont.ttf in Resources */,
 				93A8E1AA1B044BA100DBCBF7 /* iconfont-qian.png in Resources */,
@@ -390,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				932BE1671B08FF4E00C15536 /* IndexTableViewCell.m in Sources */,
+				93BA72E21B1315E800206E9B /* MyImageView.m in Sources */,
 				938384291B0F4DEA001555F2 /* HeaderViewCell.m in Sources */,
 				93E98F201AFB9A6D00D664EA /* iconfont.ttf in Sources */,
 				930AD41E1AFA0408002298E8 /* AppDelegate.m in Sources */,
@@ -483,6 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -519,6 +540,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -529,8 +551,30 @@
 			baseConfigurationReference = 385866C3557CB0B9F6A2FD30 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = date_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -540,8 +584,30 @@
 			baseConfigurationReference = 050CF3568B5E84723F3D7010 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = date_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

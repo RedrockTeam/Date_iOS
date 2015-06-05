@@ -117,7 +117,7 @@
         });
         return cell;
     }
-    
+
     NSDictionary *dict = [self.data objectAtIndex: (indexPath.row - 1)];
     
     IndexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
@@ -206,6 +206,7 @@
 #pragma mark - UIScrollView Delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //轮播的tag是213.
     if(scrollView.tag == 213){
         int pos = scrollView.contentOffset.x / scrollView.frame.size.width;
         UIPageControl *pageControl = self.myHeaderView.pageControl;

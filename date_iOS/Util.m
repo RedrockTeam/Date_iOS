@@ -27,19 +27,15 @@
     switch ([key intValue]) {
         case 1:
             return @"AA制";
-            break;
         
         case 2:
             return @"我请客";
-            break;
         
         case 3:
             return @"求请客";
-            break;
             
         default:
             return @"error!";
-            break;
     }
 }
 

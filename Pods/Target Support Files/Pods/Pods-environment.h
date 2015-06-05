@@ -48,3 +48,21 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
+// Classy
+#define COCOAPODS_POD_AVAILABLE_Classy
+#define COCOAPODS_VERSION_MAJOR_Classy 0
+#define COCOAPODS_VERSION_MINOR_Classy 2
+#define COCOAPODS_VERSION_PATCH_Classy 4
+
+// ClassyLiveLayout
+#define COCOAPODS_POD_AVAILABLE_ClassyLiveLayout
+#define COCOAPODS_VERSION_MAJOR_ClassyLiveLayout 0
+#define COCOAPODS_VERSION_MINOR_ClassyLiveLayout 6
+#define COCOAPODS_VERSION_PATCH_ClassyLiveLayout 0
+
+// Masonry
+#define COCOAPODS_POD_AVAILABLE_Masonry
+#define COCOAPODS_VERSION_MAJOR_Masonry 0
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 1
+
